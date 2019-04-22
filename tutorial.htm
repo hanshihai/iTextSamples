@@ -1,0 +1,2763 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0038)http://itextdocs.lowagie.com/tutorial/ -->
+<HTML><HEAD><TITLE>iText Tutorial: Table of Contents</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<META content="Examples and tutorial for using iText, a free Java-Pdf library" 
+name=Description>
+<META content="PDF, JAVA, iText, examples, Lowagie, Bruno" name=Keywords><LINK
+            href="../tutorial.files/style.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2900.2802" name=GENERATOR></HEAD>
+<BODY><A class=logo href="http://www.lowagie.com/iText" name=top><IMG alt=iText
+                                                                      src="../tutorial.files/logo.gif" border=0></A>
+<H1>Tutorial: iText by Example</H1>
+<H2>Table of Contents</H2>
+<DIV id=content>
+<DIV class=title>Introduction:</DIV>
+<BLOCKQUOTE>iText is a library that allows developers to extend the 
+  capabilities of their web server (and other JAVA) applications with dynamic 
+  PDF document generation. In this tutorial, you will find lots of standalone 
+  examples to learn how to use most of the iText functionality and features. It 
+  should be easy to integrate most of the solutions in a Servlet, a Java Web 
+  Start application or some other Java program. This tutorial is far from 
+  complete, but it will be updated on a regular basis. </BLOCKQUOTE>
+<UL>
+  <LI><A href="http://itextdocs.lowagie.com/tutorial/#part1">
+  <DIV class=subtitle>Part I: General Use of iText</DIV></A>
+  <LI><A href="http://itextdocs.lowagie.com/tutorial/#part2">
+  <DIV class=subtitle>Part II: Using High Level Objects</DIV></A>
+  <LI><A href="http://itextdocs.lowagie.com/tutorial/#part3">
+  <DIV class=subtitle>Part III: Fonts</DIV></A>
+  <LI><A href="http://itextdocs.lowagie.com/tutorial/#part4">
+  <DIV class=subtitle>Part IV: Direct Content</DIV></A>
+  <LI><A href="http://itextdocs.lowagie.com/tutorial/#part5">
+  <DIV class=subtitle>Part V: Interactive Features (AcroForms)</DIV></A>
+  <LI><A href="http://itextdocs.lowagie.com/tutorial/#part6">
+  <DIV class=subtitle>Part VI: the iText Toolbox explained</DIV></A>
+  <LI><A href="http://itextdocs.lowagie.com/tutorial/#part7">
+  <DIV class=subtitle>Part VII: RTF</DIV></A>
+  <LI><A href="http://itextdocs.lowagie.com/tutorial/#part8">
+  <DIV class=subtitle>Part VIII: HTML</DIV></A>
+  <LI><A href="http://itextdocs.lowagie.com/tutorial/#part9">
+  <DIV class=subtitle>Part IX: XML</DIV></A>
+  <LI><A href="http://itextdocs.lowagie.com/tutorial/#part10">
+  <DIV class=subtitle>Part X: Under the hood</DIV></A></LI></UL><BR><BR><A 
+name=part1></A>
+<DIV class=title>Part I: General Use of iText</DIV>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/general/index.html" 
+      name=general>Hello World</A>How-to generate a PDF document with iText in 5 
+      easy steps.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/index.html#5steps">Creating 
+        a document in 5 steps.</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/index.html#step1">step 
+        1: the Document object</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/index.html#step2">step 
+        2: the Writer object</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/index.html#step3">step 
+        3: opening the document</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/index.html#step4">step 
+        4: adding content</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/index.html#step5">step 
+        5: closing the document</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/HelloWorld.java">HelloWorld</A><BR>
+      <DIV class=description>Generates a simple 'Hello World' PDF file</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/HelloWorld.pdf">HelloWorld.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/DefaultPageSize.java">DefaultPageSize</A><BR>
+      <DIV class=description>Generates a PDF document with the default page size 
+      and some other predefined standard pagesizes</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/DefaultPageSize.pdf">DefaultPageSize.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/LandscapePortrait.java">LandscapePortrait</A><BR>
+      <DIV class=description>Generates a PDF document with the first page in 
+      Lanscape; the second page in Portrait</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/LandscapePortrait.pdf">LandscapePortrait.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/CustomPageSize.java">CustomPageSize</A><BR>
+      <DIV class=description>Generates a PDF document with a custom pagesize and 
+      backgroundcolor</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/CustomPageSize.pdf">CustomPageSize.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/Margins.java">Margins</A><BR>
+      <DIV class=description>Demonstrates the margin functionality</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/Margins.pdf">Margins.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/HelloSystemOut.java">HelloSystemOut</A><BR>
+      <DIV class=description>Writes PDF output to System.out</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/HelloWorld.txt">HelloWorld.txt</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/HelloWorldMultiple.java">HelloWorldMultiple</A><BR>
+      <DIV class=description>Writing to different writers at the same time; 
+      using pause() and resume()</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/HelloWorldPdf.pdf">HelloWorldPdf.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/HelloWorldRtf.rtf">HelloWorldRtf.rtf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/HelloWorldHtml.html">HelloWorldHtml.html</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/HelloEncrypted.java">HelloEncrypted</A><BR>
+      <DIV class=description>Again a PDF with the text 'Hello World', but this 
+      time the document is encrypted. To read it, you need to know the 
+      userpassword: 'Hello'</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/HelloEncrypted.pdf">HelloEncrypted.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/HelloWorldMeta.java">HelloWorldMeta</A><BR>
+      <DIV class=description>Adding metadata to a new PDF document</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/HelloWorldMeta.pdf">HelloWorldMeta.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/general/webapp/index.html" 
+      name=general_webapp>iText in a Web Application</A>How-to use iText in Web 
+      Applications.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/webapp/index.html#MyJavaServer">MyJavaServer.com</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/webapp/index.html#HelloWorld">Hello 
+        World</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/webapp/index.html#timeout">Workaround 
+        for timeout problem</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/webapp/index.html#silentprint">Silent 
+        printing</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/webapp/index.html#JSP">Hello 
+        World JSP</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/webapp/HelloWorldServlet.java">HelloWorldServlet</A><BR>
+      <DIV class=description>Generates a simple 'Hello World' file from a 
+      servlet (PDF, HTML or RTF)</DIV>
+      <DIV class=small>Extra jars needed:</DIV>
+      <UL>
+        <LI>servlet.jar</LI></UL>
+      <DIV class=small>Servlets/JSP:</DIV>
+      <UL>
+        <LI><A 
+        href="http://blowagie.users.mcs2.netarray.com/servlet/HelloWorld?presentationtype=pdf">presentationtype=pdf</A>
+        <LI><A 
+        href="http://blowagie.users.mcs2.netarray.com/servlet/HelloWorld?presentationtype=html">presentationtype=html</A>
+        <LI><A 
+        href="http://blowagie.users.mcs2.netarray.com/servlet/HelloWorld?presentationtype=rtf">presentationtype=rtf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/webapp/OutSimplePdf.java">OutSimplePdf</A><BR>
+      <DIV class=description>Generates a simple PDF file from a servlet. The 
+      file is buffered and served with the extension .pdf</DIV>
+      <DIV class=small>Extra jars needed:</DIV>
+      <UL>
+        <LI>servlet.jar</LI></UL>
+      <DIV class=small>Servlets/JSP:</DIV>
+      <UL>
+        <LI><A 
+        href="http://blowagie.users.mcs2.netarray.com/servlet/simple.pdf">without 
+        message</A>
+        <LI><A 
+        href="http://blowagie.users.mcs2.netarray.com/servlet/simple.pdf?msg=Hello+World">with 
+        message</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://cvs.sourceforge.net/viewcvs.py/*checkout*/itext/www/tutorial/general/webapp/UserAgent.jsp">UserAgent.jsp</A><BR>
+      <DIV class=description>Looks at the user-agent: if MSIE on Windows, embed 
+      the PDF; if another browser, redirect to the servlet</DIV>
+      <DIV class=small>Servlets/JSP:</DIV>
+      <UL>
+        <LI><A href="http://blowagie.users.mcs2.netarray.com/UserAgent.jsp">try 
+        this with different browsers</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://cvs.sourceforge.net/viewcvs.py/*checkout*/itext/www/tutorial/general/webapp/GetPost.jsp">GetPost.jsp</A><BR>
+      <DIV class=description>Shows that PDF generation works with GET and 
+      POST</DIV>
+      <DIV class=small>Servlets/JSP:</DIV>
+      <UL>
+        <LI><A 
+        href="http://blowagie.users.mcs2.netarray.com/GetPost.jsp?method=GET">GET</A>
+        <LI><A 
+        href="http://blowagie.users.mcs2.netarray.com/GetPost.jsp?method=POST">POST</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/webapp/ProgressServlet.java">ProgressServlet</A><BR>
+      <DIV class=description>Shows how to avoid receiving a timeout in your 
+      browser if generating the PDF takes a really long time.</DIV>
+      <DIV class=small>Extra jars needed:</DIV>
+      <UL>
+        <LI>servlet.jar</LI></UL>
+      <DIV class=small>Servlets/JSP:</DIV>
+      <UL>
+        <LI><A 
+        href="http://blowagie.users.mcs2.netarray.com/servlet/progress">show 
+        progress</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/webapp/SilentPrintServlet.java">SilentPrintServlet</A><BR>
+      <DIV class=description>Explains how to print silently via 
+      Servlet/Browser.</DIV>
+      <DIV class=small>Extra jars needed:</DIV>
+      <UL>
+        <LI>servlet.jar</LI></UL>
+      <DIV class=small>Servlets/JSP:</DIV>
+      <UL>
+        <LI><A 
+        href="http://blowagie.users.mcs2.netarray.com/servlet/silentprint">try 
+        it!</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://cvs.sourceforge.net/viewcvs.py/*checkout*/itext/www/tutorial/general/webapp/HelloWorld.jsp">HelloWorld.jsp</A><BR>
+      <DIV class=description>Generates a simple 'Hello World' file from a JSP 
+      page</DIV>
+      <DIV class=small>Servlets/JSP:</DIV>
+      <UL>
+        <LI><A 
+        href="http://blowagie.users.mcs2.netarray.com/HelloWorld.jsp">HelloWorld</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/webapp/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/general/copystamp/index.html" 
+      name=general_copystamp>Manipulating existing PDF documents</A>How-to 
+      copy/manipulate existing PDF documents.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/index.html#intro">Introduction</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/index.html#pdfwriter">PdfWriter</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/index.html#pdfstamper">PdfStamper</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/index.html#pdfcopy">PdfCopy</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/copystamp/TwoOnOne.java">TwoOnOne</A><BR>
+      <DIV class=description>Combines 2 pages on 1</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/ChapterSection.pdf">ChapterSection.pdf</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/2on1.pdf">2on1.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/copystamp/AddWatermarkPageNumbers.java">AddWatermarkPageNumbers</A><BR>
+      <DIV class=description>Adds pagenumbers and a watermark to an existing 
+      document</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/ChapterSection.pdf">ChapterSection.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/SimpleAnnotations1.pdf">SimpleAnnotations1.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/watermark.jpg">watermark.jpg</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/watermark_pagenumbers.pdf">watermark_pagenumbers.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/copystamp/Register.java">Register</A><BR>
+      <DIV class=description>Fills in a form</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/SimpleRegistrationForm.pdf">SimpleRegistrationForm.pdf</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/registered.pdf">registered.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/registered_flat.pdf">registered_flat.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/copystamp/EncryptorExample.java">EncryptorExample</A><BR>
+      <DIV class=description>Encrypts an existing PDF file</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/ChapterSection.pdf">ChapterSection.pdf</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/encrypted.pdf">encrypted.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/copystamp/Concatenate.java">Concatenate</A><BR>
+      <DIV class=description>Concatenates existing PDF files</DIV>
+      <DIV class=small>Argument(s):</DIV>
+      <UL>
+        <LI>ChapterSection.pdf
+        <LI>Destinations.pdf
+        <LI>SimpleAnnotations1.pdf
+        <LI>concatenated.pdf</LI></UL>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/ChapterSection.pdf">ChapterSection.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/Destinations.pdf">Destinations.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/SimpleAnnotations1.pdf">SimpleAnnotations1.pdf</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/concatenated.pdf">concatenated.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/copystamp/ConcatenateForms.java">ConcatenateForms</A><BR>
+      <DIV class=description>Concatenates existing PDF files with forms</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/SimpleRegistrationForm.pdf">SimpleRegistrationForm.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/TextFields.pdf">TextFields.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/ChapterSection.pdf">ChapterSection.pdf</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/concatenatedforms.pdf">concatenatedforms.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/copystamp/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/general/faq/index.html" 
+      name=general_faq>Frequently Asked Questions</A>This is a basic technical 
+      reference that answers some frequently asked questions.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/faq/index.html#measurements">Measurements</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/faq/index.html#newpage">How 
+        to create a new page in iText</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/faq/index.html#version">iText 
+        Version</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/faq/index.html#pdfversion">PDF 
+        Version</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/general/faq/index.html#portability">Why 
+        are there some strange characters in the PDF Header?</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/faq/Measurements.java">Measurements</A><BR>
+      <DIV class=description>Demonstrates the measurement system (points, 
+      inches, centimeters)</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/faq/Measurements.pdf">Measurements.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/faq/NewPage.java">NewPage</A><BR>
+      <DIV class=description>Shows how to go to a new page or insert a blank 
+      page</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/faq/NewPage.pdf">NewPage.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/faq/iTextVersion.java">iTextVersion</A><BR>
+      <DIV class=description>Shows the iText version that was used to generate 
+      this example</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/faq/version.pdf">version.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/general/faq/PdfVersion.java">PdfVersion</A><BR>
+      <DIV class=description>Change the PDF version of a document</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/faq/pdfversion.pdf">pdfversion.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/general/faq/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE><A class=top 
+href="http://itextdocs.lowagie.com/tutorial/#top">Go to top of the page</A><A 
+name=part2></A>
+<DIV class=title>Part II: Using High Level Objects</DIV>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/objects/index.html" 
+      name=objects>Basic Text Objects</A>Some basic text objects that are used 
+      in iText.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/index.html#introduction">Introduction</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/index.html#chunk">The 
+        Chunk object</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/index.html#paragraph">The 
+        Paragraph object</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/index.html#phrase">The 
+        Phrase Object</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/index.html#list">The 
+        List object</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/Chunks.java">Chunks</A><BR>
+      <DIV class=description>Demonstrates some Chunk functionality</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/Chunks.pdf">Chunks.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/DifferentFonts.java">DifferentFonts</A><BR>
+      <DIV class=description>A Paragraph can contain text in different 
+      fonts</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/differentfonts.pdf">differentfonts.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/Paragraphs.java">Paragraphs</A><BR>
+      <DIV class=description>Demonstrates some Paragraph functionality</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/Paragraphs.pdf">Paragraphs.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/SpaceWordRatio.java">SpaceWordRatio</A><BR>
+      <DIV class=description>Space Word Ratio</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/spacewordratio.pdf">spacewordratio.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/ParagraphAttributes.java">ParagraphAttributes</A><BR>
+      <DIV class=description>Demonstrates some more Paragraph 
+functionality</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/ParagraphAttributes.pdf">ParagraphAttributes.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/Phrases.java">Phrases</A><BR>
+      <DIV class=description>Demonstrates the different constructors of class 
+      Phrase</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/Phrases.pdf">Phrases.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/NegativeLeading.java">NegativeLeading</A><BR>
+      <DIV class=description>Shows the effect of a negative leading</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/NegativeLeading.pdf">NegativeLeading.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/SymbolSubstitution.java">SymbolSubstitution</A><BR>
+      <DIV class=description>Demonstrates how special characters are substituted 
+      by Symbols with Phrase.getInstance</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/SymbolSubstitution.pdf">SymbolSubstitution.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/FontSelection.java">FontSelection</A><BR>
+      <DIV class=description>Selects the appropriate fonts that contain the 
+      glyphs needed to render text correctly</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/fontselection.pdf">fontselection.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/Lists.java">Lists</A><BR>
+      <DIV class=description>Demonstrates some List functionality</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/lists.pdf">lists.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/lists.html">lists.html</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/FancyLists.java">FancyLists</A><BR>
+      <DIV class=description>Demonstrates some List with Roman numerals, Greek 
+      letters, zapfdingbats,...</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/fancylists.pdf">fancylists.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/objects/chunk/index.html" 
+      name=objects_chunk>The Chunk Object</A>Describes the functionality of the 
+      Chunk object.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/index.html#intro">Introduction</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/index.html#underline">Adding 
+        lines under, through or above a Chunk</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/index.html#subsup">Sub- 
+        and Superscript</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/index.html#background">Changing 
+        the background color</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/index.html#rendering">Stroking 
+        vs. Filling</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/index.html#skew">Skewing 
+        text</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/index.html#generic">Generic 
+        functionality</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/index.html#measure">Measuring 
+        and Scaling a Chunk</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/index.html#endline">When 
+        the end of a line is reached</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/index.html#more">To 
+        be continued...</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/chunk/Lines.java">Lines</A><BR>
+      <DIV class=description>Demonstrates how to add lines under, through,... a 
+      Chunk</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/Lines.pdf">Lines.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/chunk/SubSupScript.java">SubSupScript</A><BR>
+      <DIV class=description>Demonstrates the use of sub- and superscript</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/SubSupScript.pdf">SubSupScript.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/chunk/Background.java">Background</A><BR>
+      <DIV class=description>How to change the background color of a Chunk</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/Background.pdf">Background.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/chunk/ChunkColor.java">ChunkColor</A><BR>
+      <DIV class=description>Changing the color of a Chunk</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/ChunkColor.pdf">ChunkColor.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/chunk/Rendering.java">Rendering</A><BR>
+      <DIV class=description>Some special rendering functionality</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/Rendering.pdf">Rendering.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/chunk/Skew.java">Skew</A><BR>
+      <DIV class=description>Skewing Chunks</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/Skew.pdf">Skew.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/chunk/Generic.java">Generic</A><BR>
+      <DIV class=description>Using the Generic tag to add styles</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/Generic.pdf">Generic.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/chunk/Glossary.java">Glossary</A><BR>
+      <DIV class=description>Other use of the Generic tag: register keywords for 
+      a glossary</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/Glossary.pdf">Glossary.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/chunk/Width.java">Width</A><BR>
+      <DIV class=description>How to measure and scale the width of a Chunk</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/Width.pdf">Width.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/chunk/EndOfLine.java">EndOfLine</A><BR>
+      <DIV class=description>What happens when the end of the line is 
+      reached?</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/EndOfLine.pdf">EndOfLine.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/chunk/SplitChar.java">SplitChar</A><BR>
+      <DIV class=description>Defining Split Characters</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/SplitChar.pdf">SplitChar.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/chunk/Hyphenation.java">Hyphenation</A><BR>
+      <DIV class=description>Using auto-hyphenation</DIV>
+      <DIV class=small>Extra jars needed:</DIV>
+      <UL>
+        <LI>itext-hyph-xml.jar</LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/Hyphenation.pdf">Hyphenation.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/chunk/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/objects/anchors/index.html" 
+      name=objects_anchors>Anchors, Actions and Annotations</A>Deals with all 
+      the RemoteGoto, LocalGoto, Action, Annotation,... functionality</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/index.html#localgoto">Local 
+        Goto and Local Destination</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/index.html#remotegoto">Remote 
+        Goto</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/index.html#anchor">the 
+        Anchor object</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/index.html#actions">Actions</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/index.html#annotation">Annotations</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/anchors/LocalGoto.java">LocalGoto</A><BR>
+      <DIV class=description>Creates a document with a local goto and a local 
+      destination</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/LocalGoto.pdf">LocalGoto.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/anchors/LocalDestination.java">LocalDestination</A><BR>
+      <DIV class=description>Creates a document that jumps to a local 
+      destination upon opening</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/LocalDestination.pdf">LocalDestination.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/anchors/RemoteGoto.java">RemoteGoto</A><BR>
+      <DIV class=description>Creates two documents with links to eachother and 
+      to an external URL</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/DocumentA.pdf">DocumentA.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/DocumentB.pdf">DocumentB.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/anchors/AHref.java">AHref</A><BR>
+      <DIV class=description>Using the Anchor object</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/AHref.pdf">AHref.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/AHref.html">AHref.html</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/anchors/NamedActions.java">NamedActions</A><BR>
+      <DIV class=description>Creates a document with named actions.</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/NamedActions.pdf">NamedActions.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/anchors/JavaScriptAction.java">JavaScriptAction</A><BR>
+      <DIV class=description>Creates a document with a Javascript action.</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/JavaScriptAction.pdf">JavaScriptAction.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/anchors/Actions.java">Actions</A><BR>
+      <DIV class=description>Creates a document with some goto actions</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/Actions.pdf">Actions.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/remote.pdf">remote.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/anchors/ChainedActions.java">ChainedActions</A><BR>
+      <DIV class=description>Creates a document with chained actions.</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/ChainedActions.pdf">ChainedActions.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/anchors/OpenApplication.java">OpenApplication</A><BR>
+      <DIV class=description>Creates a document with a link to open an external 
+      application.</DIV>
+      <DIV class=small>Argument(s):</DIV>
+      <UL>
+        <LI>C://windows/</LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/OpenApplication.pdf">OpenApplication.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/anchors/SimpleAnnotations.java">SimpleAnnotations</A><BR>
+      <DIV class=description>Creates two documents with different types of 
+      annotations</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/cards.mpg">cards.mpg</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/iText.gif">iText.gif</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/SimpleAnnotations1.pdf">SimpleAnnotations1.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/SimpleAnnotations2.pdf">SimpleAnnotations2.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/anchors/Annotations.java">Annotations</A><BR>
+      <DIV class=description>Creates a document with some PdfAnnotations</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/cards.mpg">cards.mpg</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/Annotations.pdf">Annotations.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/anchors/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/index.html" 
+      name=objects_bookmarks>Viewerpreferences, Pagelabels, Optional Content and 
+      Bookmarks</A>Deals with all the PDF Viewerpreferences, Bookmarks, 
+      Outlines, Destinations,... functionality</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/index.html#viewerprefs">Viewerpreferences</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/index.html#pagelabels">Pagelabels</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/index.html#layers">Optional 
+        Content</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/index.html#bookmarks">Bookmarks</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/index.html#destinations">Creating 
+        Destinations</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/index.html#outlineactions">Outlines 
+        and Actions</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/index.html#chapter">the 
+        Chapter and Section object</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/bookmarks/ViewerPreferences.java">ViewerPreferences</A><BR>
+      <DIV class=description>Creates five versions of the same document, but 
+      with different viewerpreferences</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/TwoColumnLeft.pdf">TwoColumnLeft.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/HideMenuToolbar.pdf">HideMenuToolbar.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/FullScreen.pdf">FullScreen.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/WithTitle.pdf">WithTitle.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/NoScaling.pdf">NoScaling.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/bookmarks/PageLabels.java">PageLabels</A><BR>
+      <DIV class=description>Creates a document with pagelabels</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/PageLabels.pdf">PageLabels.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/bookmarks/Layers.java">Layers</A><BR>
+      <DIV class=description>Creates a document with text in different 
+      layers</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/Layers.pdf">Layers.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/bookmarks/Bookmarks.java">Bookmarks</A><BR>
+      <DIV class=description>Creates a document with Bookmarks for every new 
+      Paragraph that is added</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/Bookmarks.pdf">Bookmarks.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/bookmarks/Destinations.java">Destinations</A><BR>
+      <DIV class=description>Creates a document with destinations that can be 
+      called from Bookmarks</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/Destinations.pdf">Destinations.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/bookmarks/OutlineActions.java">OutlineActions</A><BR>
+      <DIV class=description>Creates a document with external destinations or 
+      actions that can be called from Bookmarks</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/OutlineActions.pdf">OutlineActions.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/remote.pdf">remote.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/bookmarks/ChapterSection.java">ChapterSection</A><BR>
+      <DIV class=description>Creates a document with Chapters and Sections 
+      (automatic outlines)</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/ChapterSection.pdf">ChapterSection.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/bookmarks/HtmlIndex.java">HtmlIndex</A><BR>
+      <DIV class=description>Creates an HTML index of a file that has 
+      bookmarks</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/ChapterSection_index.html">ChapterSection_index.html</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/OutlineActions_index.html">OutlineActions_index.html</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/bookmarks/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/objects/images/index.html" 
+      name=objects_images>Images</A>Deals with all types of images that are 
+      supported by iText</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/index.html#intro">Images</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/index.html#alignment">Image 
+        alignment</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/index.html#transformations">Image 
+        transformations</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/index.html#special">Some 
+        special features</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/Images.java">Images</A><BR>
+      <DIV class=description>Adds different formats of images to a 
+      document.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/otsoe.jpg">otsoe.jpg</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/iText.bmp">iText.bmp</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/pngnow.png">pngnow.png</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/iText.tif">iText.tif</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/getacro.gif">getacro.gif</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/iText.wmf">iText.wmf</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/Images.pdf">Images.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/RawData.java">RawData</A><BR>
+      <DIV class=description>Using raw image data to construct an Image 
+      object.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/otsoe.jpg">otsoe.jpg</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/rawdata.pdf">rawdata.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/AwtImage.java">AwtImage</A><BR>
+      <DIV class=description>Using a java.awt.Image object to construct an Image 
+      object.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/H.gif">H.gif</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/awt_image.pdf">awt_image.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/Alignment.java">Alignment</A><BR>
+      <DIV class=description>Alignment of images.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/vonnegut.gif">vonnegut.gif</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/otsoe.jpg">otsoe.jpg</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/hitchcock.png">hitchcock.png</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/alignment.pdf">alignment.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/ImagesAlignment.java">ImagesAlignment</A><BR>
+      <DIV class=description>Alignment and wrapping of images.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/vonnegut.gif">vonnegut.gif</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/otsoe.jpg">otsoe.jpg</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/hitchcock.png">hitchcock.png</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/imagesAlignment.pdf">imagesAlignment.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/ImageSequence.java">ImageSequence</A><BR>
+      <DIV class=description>Adds images to a document, once respecting the 
+      order in which they were added, once in the default order.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/otsoe.jpg">otsoe.jpg</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/getacro.gif">getacro.gif</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/inSequence.pdf">inSequence.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/notInSequence.pdf">notInSequence.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/AbsolutePositions.java">AbsolutePositions</A><BR>
+      <DIV class=description>Adding an Image at absolute positions.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/hitchcock.png">hitchcock.png</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/absolutepositions.pdf">absolutepositions.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/Scaling.java">Scaling</A><BR>
+      <DIV class=description>Scaling images.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/otsoe.jpg">otsoe.jpg</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/scaling.pdf">scaling.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/DvdCover.java">DvdCover</A><BR>
+      <DIV class=description>Make a DVD Cover.</DIV>
+      <DIV class=small>Argument(s):</DIV>
+      <UL>
+        <LI>dvdcover.pdf
+        <LI>My Sunflower Movie
+        <LI>808080
+        <LI>sunflower-front.jpg
+        <LI>sunflower-back.jpg</LI></UL>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/sunflower-front.jpg">sunflower-front.jpg</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/sunflower-back.jpg">sunflower-back.jpg</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/dvdcover.pdf">dvdcover.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/Rotating.java">Rotating</A><BR>
+      <DIV class=description>Rotating images.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/otsoe.jpg">otsoe.jpg</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/rotating.pdf">rotating.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/AnnotatedImage.java">AnnotatedImage</A><BR>
+      <DIV class=description>images and annotations.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/otsoe.jpg">otsoe.jpg</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/iText.wmf">iText.wmf</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/annotated_images.pdf">annotated_images.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/ImageChunks.java">ImageChunks</A><BR>
+      <DIV class=description>Images wrapped in a Chunk.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/pngnow.png">pngnow.png</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/imageChunks.pdf">imageChunks.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/ImageMasks.java">ImageMasks</A><BR>
+      <DIV class=description>Applying a mask to an image.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/otsoe.jpg">otsoe.jpg</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/maskedImages.pdf">maskedImages.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/index.html" 
+      name=objects_images_tiff>Selected examples: EPS, TIFF, 
+      Barcodes</A>Selected examples: Embedding PostScript, importing TIFF files, 
+      Barcodes</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/index.html#eps">Encapsulated 
+        PostScript</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/index.html#tiff">Tiff</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/index.html#barcode">Barcodes</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/tiff/EncapsulatedPostScript.java">EncapsulatedPostScript</A><BR>
+      <DIV class=description>Adding EPS to PDF</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/parrot.ps">parrot.ps</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/tiger.ps">tiger.ps</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/eps.pdf">eps.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/tiff/Tiff2Pdf.java">Tiff2Pdf</A><BR>
+      <DIV class=description>Converts some tiff files to PDF</DIV>
+      <DIV class=small>Argument(s):</DIV>
+      <UL>
+        <LI>12.tif
+        <LI>338814-00.tif
+        <LI>even.tif
+        <LI>odd.tif</LI></UL>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/12.tif">12.tif</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/338814-00.tif">338814-00.tif</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/odd.tif">odd.tif</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/even.tif">even.tif</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/12.pdf">12.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/338814-00.pdf">338814-00.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/even.pdf">even.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/odd.pdf">odd.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/tiff/OddEven.java">OddEven</A><BR>
+      <DIV class=description>Combines 2 tiffs, one with odd, another with even 
+      pages into 1 combined PDF</DIV>
+      <DIV class=small>Argument(s):</DIV>
+      <UL>
+        <LI>odd.tif
+        <LI>even.tif
+        <LI>combined.pdf</LI></UL>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/odd.tif">odd.tif</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/even.tif">even.tif</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/combined.pdf">combined.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/tiff/Barcodes.java">Barcodes</A><BR>
+      <DIV class=description>List with different barcodes</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/barcodes.pdf">barcodes.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/tiff/ExampleEAN128.java">ExampleEAN128</A><BR>
+      <DIV class=description>Example barcode ean128</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/ean128.pdf">ean128.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/images/tiff/ExamplePDF417.java">ExamplePDF417</A><BR>
+      <DIV class=description>Example barcode pdf417</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/pdf417.pdf">pdf417.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/images/tiff/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/objects/tables/index.html" 
+      name=objects_tables>Tables</A>How to organize text and data in tables with 
+      iText</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/index.html#intro">My 
+        First PdfPTable</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/index.html#tablewidths">Widths, 
+        alignment and spacing</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/index.html#addingcells">Adding 
+        PdfPCells</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/index.html#styles">Cellheights, 
+        -alignment, -padding, -leading, -colors</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/index.html#nextpage">Splitting 
+        tables over several pages</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/index.html#continued">To 
+        be continued</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/MyFirstTable.java">MyFirstTable</A><BR>
+      <DIV class=description>Use a PdfPTable to add a table to a PDF 
+      document</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/MyFirstTable.pdf">MyFirstTable.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/TableWidthAlignment.java">TableWidthAlignment</A><BR>
+      <DIV class=description>Changing the width and the alignment of the 
+      complete table</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/TableWidthAlignment.pdf">TableWidthAlignment.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/TableSpacing.java">TableSpacing</A><BR>
+      <DIV class=description>Defining the spacing between the table and other 
+      content</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/TableSpacing.pdf">TableSpacing.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/CellWidths.java">CellWidths</A><BR>
+      <DIV class=description>Changing the widths of columns</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/CellWidths.pdf">CellWidths.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/DefaultCell.java">DefaultCell</A><BR>
+      <DIV class=description>Using getDefaultCell to change the default 
+      style</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/DefaultCell.pdf">DefaultCell.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/NestedTables.java">NestedTables</A><BR>
+      <DIV class=description>Using nested tables</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/NestedTables.pdf">NestedTables.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/ImageCell.java">ImageCell</A><BR>
+      <DIV class=description>Adding an Image to a table</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/otsoe.jpg">otsoe.jpg</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/ImageCell.pdf">ImageCell.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/CellHeights.java">CellHeights</A><BR>
+      <DIV class=description>Playing with heights of PdfPCells</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/CellHeights.pdf">CellHeights.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/CellAlignment.java">CellAlignment</A><BR>
+      <DIV class=description>Changing the alignment of the contents of a 
+      PdfPCell</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/Alignment.pdf">Alignment.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/CellPaddingLeading.java">CellPaddingLeading</A><BR>
+      <DIV class=description>Changing the padding and the leading of the 
+      contents of a PdfPCell</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/PaddingLeading.pdf">PaddingLeading.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/CellColors.java">CellColors</A><BR>
+      <DIV class=description>Using some Rectangle methods on PdfPCell</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/CellColors.pdf">CellColors.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/TableBorders.java">TableBorders</A><BR>
+      <DIV class=description>Demonstrates different borderstyles</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/TableBorders.pdf">TableBorders.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/AddBigTable.java">AddBigTable</A><BR>
+      <DIV class=description>A very big table added with document.add()</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/AddBigTable.pdf">AddBigTable.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/SplitRows.java">SplitRows</A><BR>
+      <DIV class=description>Add a table to a PDF with document.add() and if the 
+      cell doesn't fit, the row is split in two parts</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/SplitRowsBetween.pdf">SplitRowsBetween.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/SplitRowsWithin.pdf">SplitRowsWithin.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/OmitRows.pdf">OmitRows.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/index.html" 
+      name=objects_tables_pdfptable>PdfPTable</A>Some extra PdfPTable 
+      functionality</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/index.html#">Adding 
+        a PdfPTable at an absolute position</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/index.html#memory">Memory 
+        management for large tables</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/index.html#cellevents">Cell 
+        and Table Events</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/index.html#verticaltext">Vertical 
+        Text</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/pdfptable/WriteSelectedRows.java">WriteSelectedRows</A><BR>
+      <DIV class=description>Demonstrates the writeSelectedRows method</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/WriteSelectedRows.pdf">WriteSelectedRows.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/pdfptable/Tables.java">Tables</A><BR>
+      <DIV class=description>Adds a table to an absolute position</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/tables.pdf">tables.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/pdfptable/SplitTable.java">SplitTable</A><BR>
+      <DIV class=description>Demonstrates how to split a Table in two sections 
+      of columns</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/SplitTable.pdf">SplitTable.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/pdfptable/FragmentTable.java">FragmentTable</A><BR>
+      <DIV class=description>Break one large Table up into different smaller 
+      tables with the same header</DIV>
+      <DIV class=small>Argument(s):</DIV>
+      <UL>
+        <LI>50</LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/FragmentTable.pdf">FragmentTable.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/pdfptable/CellEvents.java">CellEvents</A><BR>
+      <DIV class=description>Demonstrates what one can do with cell events</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/otsoe.jpg">otsoe.jpg</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/CellEvents.pdf">CellEvents.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/pdfptable/TableEvents1.java">TableEvents1</A><BR>
+      <DIV class=description>Demonstrates what one can do with table 
+events</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/TableEvents1.pdf">TableEvents1.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/pdfptable/TableEvents2.java">TableEvents2</A><BR>
+      <DIV class=description>Demonstrates what one can do with table events 
+      (cells with colspan &gt; 1)</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/TableEvents2.pdf">TableEvents2.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/pdfptable/FloatingBoxes.java">FloatingBoxes</A><BR>
+      <DIV class=description>Demonstrates how to simulate cellspacing as in 
+      HTML</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/FloatingBoxes.pdf">FloatingBoxes.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/pdfptable/VerticalTextInCells.java">VerticalTextInCells</A><BR>
+      <DIV class=description>Demonstrates how to add vertical text in a 
+      cell</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/VerticalText.pdf">VerticalText.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/pdfptable/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/index.html" 
+      name=objects_tables_alternatives>Alternatives for PdfPTable</A>Some 
+      alternative ways to create a Table</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/index.html#jtable">JTable 
+        to PDF</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/index.html#table">the 
+        Table object</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/alternatives/JTable2Pdf.java">JTable2Pdf</A><BR>
+      <DIV class=description>Print a Swing jTable to a PDF file</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/jTable.pdf">jTable.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/alternatives/OldTable.java">OldTable</A><BR>
+      <DIV class=description>Generates a table with the Table object</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/oldtable.pdf">oldtable.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/alternatives/LargeCell.java">LargeCell</A><BR>
+      <DIV class=description>Trying to fit a Cell on a page</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/largecell.pdf">largecell.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/alternatives/TablePdfPTable.java">TablePdfPTable</A><BR>
+      <DIV class=description>Generates a table with the TableAttributes 
+      object</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/tableattributes.pdf">tableattributes.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/tableattributes.rtf">tableattributes.rtf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/alternatives/PaddingBorders.java">PaddingBorders</A><BR>
+      <DIV class=description>Generates tables with different padding, 
+      bordercolors and borderwidths</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/paddingborders.pdf">paddingborders.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/alternatives/MyFirstTable.java">MyFirstTable</A><BR>
+      <DIV class=description>Generate a table with the Table/PdfPTable 
+      object</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/MyFirstTable.pdf">MyFirstTable.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/alternatives/SpecificCells.java">SpecificCells</A><BR>
+      <DIV class=description>Adding Cells at specific positions</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/specificcells.pdf">specificcells.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/alternatives/RepeatingTable.java">RepeatingTable</A><BR>
+      <DIV class=description>Shows how a table is split if it doesn't fit the 
+      page</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/repeatingtable.pdf">repeatingtable.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/alternatives/NestedTables.java">NestedTables</A><BR>
+      <DIV class=description>Nested tables</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/nestedtables.pdf">nestedtables.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/tables/alternatives/TableWithImage.java">TableWithImage</A><BR>
+      <DIV class=description>Generate a table with the Table object containing 
+      Images</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/otsoe.jpg">otsoe.jpg</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/iText.gif">iText.gif</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/imageTable.pdf">imageTable.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/tables/alternatives/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/objects/columns/index.html" 
+      name=objects_columns>ColumnText</A>How to organize text and data in 
+      columns with iText</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/objects/columns/index.html#introduction">Columns</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/columns/Column.java">Column</A><BR>
+      <DIV class=description>Defining a simple single object ColumnText 
+      object</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/columns/column.pdf">column.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/columns/ColumnSimple.java">ColumnSimple</A><BR>
+      <DIV class=description>Adding phrases to a simple ColumnText object</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/columns/columnsimple.pdf">columnsimple.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/columns/ColumnObjects.java">ColumnObjects</A><BR>
+      <DIV class=description>Adding different objects to a simple ColumnText 
+      object</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/columns/cover.png">cover.png</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/columns/columnobjects.pdf">columnobjects.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/columns/ColumnIrregular.java">ColumnIrregular</A><BR>
+      <DIV class=description>Defining an irregular ColumnText object</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/columns/caesar_coin.jpg">caesar_coin.jpg</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/columns/columnirregular.pdf">columnirregular.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/columns/MultiColumnSimple.java">MultiColumnSimple</A><BR>
+      <DIV class=description>Defining a simple MultiColumnText object</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/columns/multicolumnsimple.pdf">multicolumnsimple.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/columns/MultiColumnR2L.java">MultiColumnR2L</A><BR>
+      <DIV class=description>Defining a MultiColumnText object that adds its 
+      columns from right to left</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/columns/multicolumnR2L.pdf">multicolumnR2L.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/objects/columns/MultiColumnIrregular.java">MultiColumnIrregular</A><BR>
+      <DIV class=description>Defining an irregular MultiColumnText object</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/columns/multicolumnirregular.pdf">multicolumnirregular.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/objects/columns/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE><A class=top 
+href="http://itextdocs.lowagie.com/tutorial/#top">Go to top of the page</A><A 
+name=part3></A>
+<DIV class=title>Part III: Fonts</DIV>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/fonts/index.html" 
+      name=fonts>The Font objects</A>Describes the different Font objects in 
+      iText.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/index.html#font">The 
+        Font-class</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/index.html#fontfactory">The 
+        FontFactory-class</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/index.html#basefont">The 
+        BaseFont-class</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/index.html#more">to be 
+        continued...</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/StandardType1Fonts.java">StandardType1Fonts</A><BR>
+      <DIV class=description>Sums up the 14 Standard Type 1 Fonts</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/StandardType1Fonts.pdf">StandardType1Fonts.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/FontFactoryType1Fonts.java">FontFactoryType1Fonts</A><BR>
+      <DIV class=description>Sums up the 14 Standard Type 1 Fonts (using the 
+      FontFactory)</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/FontFactoryType1Fonts.pdf">FontFactoryType1Fonts.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/TrueType.java">TrueType</A><BR>
+      <DIV class=description>Using a True Type font</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/truetype.pdf">truetype.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/FullFontNames.java">FullFontNames</A><BR>
+      <DIV class=description>Retrieving the full font name</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/fullfontname_arialbi.txt">fullfontname_arialbi.txt</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/ListEncodings.java">ListEncodings</A><BR>
+      <DIV class=description>Asking the font for its available encodings</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/encodings.txt">encodings.txt</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/FontEncoding.java">FontEncoding</A><BR>
+      <DIV class=description>Using a True Type font that will be embedded in the 
+      PDF</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/fontencoding.pdf">fontencoding.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/UnicodeExample.java">UnicodeExample</A><BR>
+      <DIV class=description>Using BaseFont.IDENTITY_H as 'encoding'</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/unicode.pdf">unicode.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/EncodingFont.java">EncodingFont</A><BR>
+      <DIV class=description>Using an encoding to display characters from other 
+      alphabets</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/encodingfont.pdf">encodingfont.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/fonts/styles/index.html" 
+      name=fonts_styles>Font characteristics</A>Changing the style of a 
+  Font.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/index.html#measuring">Width 
+        and heigths of glyphs</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/index.html#styles">Font 
+        Styles</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/index.html#direction">Direction</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/styles/WidthHeight.java">WidthHeight</A><BR>
+      <DIV class=description>Asking a font for the width/height of a 
+      textstring</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/widthheight.pdf">widthheight.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/styles/FixedFontWidth.java">FixedFontWidth</A><BR>
+      <DIV class=description>Changing the width of the font glyphs</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/fixedfontwidth.pdf">fixedfontwidth.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/styles/FontStylePropagation.java">FontStylePropagation</A><BR>
+      <DIV class=description>Explains the mechanism of Font Style 
+      Propagation</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/FontStylePropagation.pdf">FontStylePropagation.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/styles/ExtraStyles.java">ExtraStyles</A><BR>
+      <DIV class=description>Demonstrates how to underline or strike through 
+      text</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/ExtraStyles.pdf">ExtraStyles.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/ExtraStyles.rtf">ExtraStyles.rtf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/ExtraStyles.html">ExtraStyles.html</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/styles/FontColor.java">FontColor</A><BR>
+      <DIV class=description>Shows how to change the color of a font</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/FontColor.pdf">FontColor.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/styles/RightToLeft.java">RightToLeft</A><BR>
+      <DIV class=description>Writing text from left to right</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/righttoleft.pdf">righttoleft.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/styles/ComplexText.java">ComplexText</A><BR>
+      <DIV class=description>Writing text from left to right at absolute 
+      positions</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/complextext.pdf">complextext.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/styles/Vertical.java">Vertical</A><BR>
+      <DIV class=description>Writing vertical text</DIV>
+      <DIV class=small>Extra jars needed:</DIV>
+      <UL>
+        <LI>iTextAsian.jar</LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/vertical.pdf">vertical.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/styles/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/fonts/getting/index.html" 
+      name=fonts_getting>Getting fonts</A>Overview of the different types of 
+      fonts supported by iText.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/index.html#standard">Fonts 
+        supported in iText</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/index.html#builtin">Built-in 
+        fonts</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/index.html#files">Fonts 
+        from files</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/index.html#jars">Fonts 
+        from jars (and font packs)</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/getting/TrueType.java">TrueType</A><BR>
+      <DIV class=description>Using a True Type font</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/truetype.pdf">truetype.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/getting/RegisterFont.java">RegisterFont</A><BR>
+      <DIV class=description>Registering Fonts with the FontFactory</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/registerfont.pdf">registerfont.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/registered.txt">registered.txt</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/getting/FontFactoryStyles.java">FontFactoryStyles</A><BR>
+      <DIV class=description>Changing the style of a fontfactory font</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/fontfactorystyles.pdf">fontfactorystyles.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/getting/UsingFontFactory.java">UsingFontFactory</A><BR>
+      <DIV class=description>Sums up the Fonts that are available in some 
+      standard font directories on your system</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/FontFactory.pdf">FontFactory.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/getting/TrueTypeCollections.java">TrueTypeCollections</A><BR>
+      <DIV class=description>True Type Collections</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/truetypecollections.pdf">truetypecollections.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/msgothic.txt">msgothic.txt</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/getting/OpenTypeFont.java">OpenTypeFont</A><BR>
+      <DIV class=description>Using an Open Type Font with Compact Font Format 
+      (CFF) data only (no true type outlines)</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/liz.otf">liz.otf</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/opentypefont.pdf">opentypefont.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/fonts/getting/ChineseJapaneseKorean.java">ChineseJapaneseKorean</A><BR>
+      <DIV class=description>Using CJK Fonts</DIV>
+      <DIV class=small>Extra jars needed:</DIV>
+      <UL>
+        <LI>iTextAsian.jar</LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/cjk.pdf">cjk.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/fonts/getting/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE><A class=top 
+href="http://itextdocs.lowagie.com/tutorial/#top">Go to top of the page</A><A 
+name=part4></A>
+<DIV class=title>Part IV: Direct Content</DIV>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/directcontent/index.html" 
+      name=directcontent>Direct Content</A>Add content directly to the PDF file 
+      using the PdfContentByte class.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/index.html#pdfsyntax">PDF 
+        Syntax</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/index.html#pdfcontentbyte">iText 
+        approach</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/index.html#templates">Using 
+        templates (Form XObjects)</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/index.html#Postscript">PostScript 
+        XObjects</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/Layers.java">Layers</A><BR>
+      <DIV class=description>Explains the concept of PdfContentByte layers in 
+      iText</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/hitchcock.png">hitchcock.png</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/layers.pdf">layers.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/Templates.java">Templates</A><BR>
+      <DIV class=description>Using templates</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/templates.pdf">templates.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/TemplateImages.java">TemplateImages</A><BR>
+      <DIV class=description>Templates used as image</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/templateImages.pdf">templateImages.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/directcontent/coordinates/index.html" 
+      name=directcontent_coordinates>Coordinate Systems</A>Coordinate Systems - 
+      changing the Current Transformation Matrix (CTM)</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/coordinates/index.html#xycoordinates">The 
+        coordinate system</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/coordinates/index.html#transform">Transformations</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/coordinates/index.html#templates">Adding 
+        PdfTemplates</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/coordinates/index.html#images">Adding 
+        Images</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/coordinates/XandYcoordinates.java">XandYcoordinates</A><BR>
+      <DIV class=description>Puts some marks at specific X and Y coordinates; 
+      connects the marks with a line and puts some text next to the marks</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/coordinates/XandY.pdf">XandY.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/coordinates/UpsideDown.java">UpsideDown</A><BR>
+      <DIV class=description>Same example as above, but now the origin is in the 
+      upper left corner</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/coordinates/upsidedown.pdf">upsidedown.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/coordinates/AffineTransformation.java">AffineTransformation</A><BR>
+      <DIV class=description>Same example as above, but now the X and Y 
+      coordinates are scaled</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/coordinates/affinetransformation.pdf">affinetransformation.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/coordinates/Transformations.java">Transformations</A><BR>
+      <DIV class=description>Add a template using different transformation 
+      matrices</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/coordinates/transformations.pdf">transformations.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/coordinates/TransformImage.java">TransformImage</A><BR>
+      <DIV class=description>Add an image using different transformation 
+      matrices</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/coordinates/hitchcock.png">hitchcock.png</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/coordinates/transformimage.pdf">transformimage.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/coordinates/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics/index.html" 
+      name=directcontent_graphics>Graphics State</A>Add graphics directly to the 
+      PDF file using the PdfContentByte class.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics/index.html#pdfsyntax">PDF 
+        Syntax</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics/index.html#state">Graphics 
+        State</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics/index.html#parameters">Methods 
+        to change the parameters</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics/index.html#paths">Path 
+        construction and painting</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/graphics/Literal.java">Literal</A><BR>
+      <DIV class=description>Writing PDF Syntax directly to iText</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics/literal.pdf">literal.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/graphics/State.java">State</A><BR>
+      <DIV class=description>Changing the Graphics State with saveState and 
+      restoreState</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics/state.pdf">state.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/graphics/GState.java">GState</A><BR>
+      <DIV class=description>Changing the Graphics State with setGState</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics/gstate.pdf">gstate.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/graphics/Circles.java">Circles</A><BR>
+      <DIV class=description>Draws some concentric circles</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics/circles.pdf">circles.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/graphics/Shapes.java">Shapes</A><BR>
+      <DIV class=description>Draws some shapes</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics/shapes.pdf">shapes.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/index.html" 
+      name=directcontent_colors>Colors</A>Colors, Transparency, Spotcolors, 
+      Patterns and Shading.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/index.html#device">Device 
+        Color spaces</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/index.html#spotcolors">Separation 
+        Color Spaces</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/index.html#patterns">Patterns</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/index.html#transparency">Transparency</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/colors/SpotColors.java">SpotColors</A><BR>
+      <DIV class=description>Using spotcolors.</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/spotcolor.pdf">spotcolor.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/colors/Pattern.java">Pattern</A><BR>
+      <DIV class=description>A stencil example (you define a shape and a default 
+      color).</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/pattern.pdf">pattern.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/colors/Patterns.java">Patterns</A><BR>
+      <DIV class=description>Colored patterns.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/pngnow.png">pngnow.png</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/patterns.pdf">patterns.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/colors/Shading.java">Shading</A><BR>
+      <DIV class=description>Shading.</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/shading.pdf">shading.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/colors/ShadingPattern.java">ShadingPattern</A><BR>
+      <DIV class=description>Shading pattern.</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/shading_pattern.pdf">shading_pattern.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/colors/Transparency.java">Transparency</A><BR>
+      <DIV class=description>Reproducing PLATE 16 on p1053 in the PDF Reference 
+      Manual</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/transparency.pdf">transparency.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/colors/Groups.java">Groups</A><BR>
+      <DIV class=description>Making images transparent.</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/groups.pdf">groups.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/colors/SoftMask.java">SoftMask</A><BR>
+      <DIV class=description>Making images transparent.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/otsoe.jpg">otsoe.jpg</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/softmask.pdf">softmask.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/colors/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/directcontent/text/index.html" 
+      name=directcontent_text>Text</A>Add text content directly to the PDF file 
+      using the PdfContentByte class.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/text/index.html#pdfsyntax">PDF 
+        Syntax</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/text/index.html#text">Text 
+        State</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/text/index.html#fonts">Fonts</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/text/Text.java">Text</A><BR>
+      <DIV class=description>Adding text at absolute positions</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/text/text.pdf">text.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/text/Logo.java">Logo</A><BR>
+      <DIV class=description>Draws the iText logo</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/text/logo.pdf">logo.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/text/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/directcontent/pageevents/index.html" 
+      name=directcontent_pageevents>Page Events</A>Add content directly to the 
+      PDF file using the PdfContentByte class.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/pageevents/index.html#pageevents">Page 
+        Event Methods</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/pageevents/index.html#examples">Examples</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/pageevents/index.html#romeojuliet">Romeo 
+        and Juliet: XML to PDF</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/pageevents/EndPage.java">EndPage</A><BR>
+      <DIV class=description>Headers and footers in an EndPage event</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/pageevents/endpage.pdf">endpage.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/pageevents/PageNumbersWatermark.java">PageNumbersWatermark</A><BR>
+      <DIV class=description>Making a document with a header containing 'page x 
+      of y' and with a watermark on every page.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/pageevents/logo.gif">logo.gif</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/pageevents/pageNumbersWatermark.pdf">pageNumbersWatermark.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/pageevents/Bookmarks.java">Bookmarks</A><BR>
+      <DIV class=description>Using paragraph events</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/pageevents/bookmarks.pdf">bookmarks.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/pageevents/Events.java">Events</A><BR>
+      <DIV class=description>Using PageEvents</DIV>
+      <DIV class=small>Extra jars needed:</DIV>
+      <UL>
+        <LI>crimson.jar</LI></UL>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/pageevents/tagmapRomeoJuliet.xml">tagmapRomeoJuliet.xml</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/pageevents/playRomeoJuliet.xml">playRomeoJuliet.xml</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/pageevents/RomeoJuliet.pdf">RomeoJuliet.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/pageevents/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/directcontent/optionalcontent/index.html" 
+      name=directcontent_optionalcontent>Optional Content</A>Add optional 
+      content to a PDF file.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/optionalcontent/index.html#ocg">Optional 
+        Content Groups</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/optionalcontent/OrderedLayers.java">OrderedLayers</A><BR>
+      <DIV class=description>Ordering Optional Content Groups</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/optionalcontent/orderedlayers.pdf">orderedlayers.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/optionalcontent/ContentGroups.java">ContentGroups</A><BR>
+      <DIV class=description>Grouping Optional Content</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/optionalcontent/contentgroups.pdf">contentgroups.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/optionalcontent/OptionalContent.java">OptionalContent</A><BR>
+      <DIV class=description>Changing the visibility using an Action</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/optionalcontent/pngnow.png">pngnow.png</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/optionalcontent/optionalcontent.pdf">optionalcontent.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/optionalcontent/NestedLayers.java">NestedLayers</A><BR>
+      <DIV class=description>Nesting Optional Content</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/optionalcontent/nestedlayers.pdf">nestedlayers.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/optionalcontent/Automatic.java">Automatic</A><BR>
+      <DIV class=description>Automatic grouping and nesting of Optional 
+      Content</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/optionalcontent/automatic.pdf">automatic.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/optionalcontent/Layers.java">Layers</A><BR>
+      <DIV class=description>Zooming and radio groups</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/optionalcontent/layers.pdf">layers.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/optionalcontent/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics2D/index.html" 
+      name=directcontent_graphics2D>Graphics2D</A>If you don't want to read all 
+      the chapters on PDF syntax, just use the JAVA API</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics2D/index.html#graphics2D">The 
+        java.awt.Graphics2D object</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/graphics2D/G2D.java">G2D</A><BR>
+      <DIV class=description>A Simple Graphics2D example</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics2D/graphics2D.pdf">graphics2D.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/graphics2D/ArabicText.java">ArabicText</A><BR>
+      <DIV class=description>Drawing arabic text using the Graphics2D 
+      object</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics2D/arabictext.pdf">arabictext.pdf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/directcontent/graphics2D/JFreeChartExample.java">JFreeChartExample</A><BR>
+      <DIV class=description>Some JFreeChart examples</DIV>
+      <DIV class=small>Extra jars needed:</DIV>
+      <UL>
+        <LI>jfreechart.jar
+        <LI>jcommon.jar</LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics2D/barchart.pdf">barchart.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics2D/piechart.pdf">piechart.pdf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics2D/xychart.pdf">xychart.pdf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/directcontent/graphics2D/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE><A class=top 
+href="http://itextdocs.lowagie.com/tutorial/#top">Go to top of the page</A><A 
+name=part5></A>
+<DIV class=title>Part V: Interactive Features (AcroForms)</DIV>
+<DIV class=chapter>Under Construction</DIV><A class=top 
+href="http://itextdocs.lowagie.com/tutorial/#top">Go to top of the page</A><A 
+name=part6></A>
+<DIV class=title>Part VI: the iText Toolbox explained</DIV>
+<DIV class=chapter>Under Construction</DIV><A class=top 
+href="http://itextdocs.lowagie.com/tutorial/#top">Go to top of the page</A><A 
+name=part7></A>
+<DIV class=title>Part VII: RTF</DIV>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/rtf/index.html" name=rtf>Rich 
+      Text Format</A>How-to generate RTF documents using iText.</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/index.html#rtfpackage">The 
+        RTF Package</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/index.html#rtfdocument">Creating 
+        an RTF document</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/index.html#unsupported">Unsupported 
+        iText features</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/index.html#extendedfont">Extended 
+        font support</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/index.html#additionalfontstyles">Additional 
+        font styles</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/index.html#extendedhf">Extended 
+        header / footer support</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/index.html#tocsupport">Table 
+        of contents support</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/index.html#extendedcellborder">Extended 
+        cell border support</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/index.html#pagenumberelement">Page 
+        number element</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/index.html#diskcaching">Using 
+        a Disk Cache for document generation</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/index.html#documentsettings">Using 
+        document output settings</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/rtf/HelloRtf.java">HelloRtf</A><BR>
+      <DIV class=description>Generates a simple 'Hello World' RTF file</DIV>
+      <DIV class=small>Argument(s):</DIV>
+      <UL>
+        <LI>World</LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/HelloWorld.rtf">HelloWorld.rtf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/rtf/RtfSpecialFont.java">RtfSpecialFont</A><BR>
+      <DIV class=description>Special fonts</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/specialfont.rtf">specialfont.rtf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/rtf/RtfWithHeadersFooters.java">RtfWithHeadersFooters</A><BR>
+      <DIV class=description>Headers/footers and page numbers</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/headerfooter.rtf">headerfooter.rtf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/rtf/RtfTOCandCellborders.java">RtfTOCandCellborders</A><BR>
+      <DIV class=description>Table of contents and cell borders</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/toc.rtf">toc.rtf</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/rtf/RtfTest.java">RtfTest</A><BR>
+      <DIV class=description>The TestSuite used to test RtfWriter2 
+      functionality</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/pngnow.png">pngnow.png</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/testNew.rtf">testNew.rtf</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/testOld.rtf">testOld.rtf</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/rtf/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE><A class=top 
+href="http://itextdocs.lowagie.com/tutorial/#top">Go to top of the page</A><A 
+name=part8></A>
+<DIV class=title>Part VIII: HTML</DIV>
+<TABLE cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><A class=chapter 
+      href="http://itextdocs.lowagie.com/tutorial/html/index.html" 
+      name=html>Generating HTML with iText</A>How-to generate a HTML documents 
+      with iText</TD></TR>
+  <TR>
+    <TD vAlign=top width=250>
+      <DIV class=subtitle>Sections</DIV>
+      <UL>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/html/index.html#reason">Why 
+        I wrote HtmlWriter.</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/html/index.html#helloworld">The 
+        Hello World example for HTML</A>
+        <LI><A class=small 
+        href="http://itextdocs.lowagie.com/tutorial/html/index.html#metadata">Metadata 
+        in HTML</A></LI></UL></TD>
+    <TD vAlign=top>
+      <DIV class=subtitle>Examples</DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/html/HelloHtml.java">HelloHtml</A><BR>
+      <DIV class=description>Generates a simple 'Hello World' HTML file</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/HelloWorld.html">HelloWorld.html</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/html/HelloWorldMeta.java">HelloWorldMeta</A><BR>
+      <DIV class=description>Generates an HTML file with metadata</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/HelloWorldMeta.html">HelloWorldMeta.html</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/html/JavaScriptAction.java">JavaScriptAction</A><BR>
+      <DIV class=description>Generates an HTML file with JavaScript</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/JavaScriptAction.html">JavaScriptAction.html</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/html/Images.java">Images</A><BR>
+      <DIV class=description>Adds different formats of images to a 
+      document.</DIV>
+      <DIV class=small>Input:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/otsoe.jpg">otsoe.jpg</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/iText.bmp">iText.bmp</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/pngnow.png">pngnow.png</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/iText.tif">iText.tif</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/getacro.gif">getacro.gif</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/iText.wmf">iText.wmf</A></LI></UL>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/images_wrong.html">images_wrong.html</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/images_right.html">images_right.html</A></LI></UL></DIV>
+      <DIV class=example><A class=source 
+      href="http://itextdocs.lowagie.com/examples/com/lowagie/examples/html/ImagesURL.java">ImagesURL</A><BR>
+      <DIV class=description>Adds images to an HTML file using the complete 
+      URL.</DIV>
+      <DIV class=small>Output:</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/images_wrong.html">images_wrong.html</A>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/images.html">images.html</A></LI></UL></DIV>
+      <DIV class=example>
+      <DIV class=small>ANT script (all examples):</DIV>
+      <UL>
+        <LI><A 
+        href="http://itextdocs.lowagie.com/tutorial/html/build.xml">build.xml 
+        </A></LI></UL></DIV></TD></TR></TBODY></TABLE><A class=top 
+href="http://itextdocs.lowagie.com/tutorial/#top">Go to top of the page</A><A 
+name=part9></A>
+<DIV class=title>Part IX: XML</DIV>
+<DIV class=chapter>Under Construction</DIV><A class=top 
+href="http://itextdocs.lowagie.com/tutorial/#top">Go to top of the page</A><A 
+name=part10></A>
+<DIV class=title>Part X: Under the hood</DIV>
+<DIV class=chapter>Under Construction</DIV><A class=top 
+href="http://itextdocs.lowagie.com/tutorial/#top">Go to top of the page</A>
+<DIV id=footer xmlns="http://www.w3.org/1999/xhtml">Page Updated: 2005/04/14 
+14:53:22 Copyright © 1999-2005 <BR><A 
+href="http://www.lowagie.com/iText/">iText</A> is a Free Java-Pdf library by 
+Bruno Lowagie and Paulo Soares. </DIV></DIV>
+<DIV class=commercial><BR>
+<SCRIPT type=text/javascript><!--
+google_ad_client = "pub-0340380473790570";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_ad_channel ="";
+google_ad_type = "text_image";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "1B09BD";
+google_color_url = "100670";
+google_color_text = "707070";
+//--></SCRIPT>
+
+<SCRIPT src="../tutorial.files/show_ads.js" type=text/javascript></SCRIPT>
+<BR><BR>
+<DIV class=subtitle>Amazon books:</DIV>
+<SCRIPT type=text/javascript><!--
+document.write('<iframe src="http://rcm.amazon.com/e/cm?t=itisacatalofwebp&o=1&p=8&l=as1&asins=0321304748&fc1=000000&lc1=0000ff&bc1=&lt1=_blank&IS2=1&bg1=ffffff&f=ifr" width="120" height="240" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" align="Center"></iframe>');
+//--></SCRIPT>
+<A class=amazonlinks 
+href="http://www.amazon.co.uk/exec/obidos/ASIN/0321304748/catloogjecom-21">amazon.co.uk-link 
+</A><BR><BR>
+<SCRIPT type=text/javascript><!--
+document.write('<iframe src="http://rcm.amazon.com/e/cm?t=itisacatalofwebp&o=1&p=10&l=st1&mode=books&search=PDF&=1&fc1=&lc1=&lt1=&bg1=&f=ifr" width="120" height="460" border="0" frameborder="0" style="border:none;" scrolling="no" marginwidth="0" marginheight="0"></iframe>');
+//--></SCRIPT>
+<BR>
+<SCRIPT type=text/javascript><!--
+document.write('<iframe src="http://rcm.amazon.com/e/cm?t=itisacatalofwebp&o=1&p=10&l=st1&mode=books&search=JAVA&=1&fc1=&lc1=&lt1=&bg1=&f=ifr" width="120" height="460" border="0" frameborder="0" style="border:none;" scrolling="no" marginwidth="0" marginheight="0"></iframe>');
+//--></SCRIPT>
+<BR></DIV></BODY></HTML>
